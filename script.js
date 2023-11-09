@@ -24,7 +24,7 @@ const animalsToAdopt = [
   
 ];
 
-
+// ------------------------------------1 ere Solution------------------------------------
 function createCard(title, imageUrl) {
   const card = document.createElement("div");
   card.classList.add("card");
@@ -68,4 +68,25 @@ function createCard(title, imageUrl) {
     });
 
 
+// ------------------------------------2 eme Solution------------------------------------
 
+function createCard(title, imageUrl) {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.innerHTML = `
+      <div class="card-header">
+        <div class="card-img" style="background-image: url(${imageUrl});"></div>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title">${title}</h2>
+        <button class="card-button">Adopt Now</button>
+      </div>
+    `;
+    cards.appendChild(card);
+  }
+  
+  // Création des cartes pour chaque animal
+  animalsToAdopt.forEach(animal => {
+    createCard(animal.name, animal.picture);
+  });
+  
